@@ -10,6 +10,9 @@ def index():
 def home():
     return render_template('home.html')
 
-# if __name__ == "__main__":
-#    app.run(host='0.0.0.0')
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('hello.html', name=name)
+
 
